@@ -34,7 +34,7 @@ export default function Navbar() {
         {/* LOGO - Exact Match to SBS Branding */}
         <Link href="/" className="flex-shrink-0">
           <Image
-            src="/sbs-logo.png" 
+            src="/SBS-logo.png" 
             alt="Smart Business Solutions Logo"
             width={160}
             height={60}

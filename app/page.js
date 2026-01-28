@@ -8,47 +8,55 @@ export default function SolarHomepage() {
     <main className="relative min-h-screen bg-white">
       
       {/* --- HERO SECTION --- */}
-      <section className="relative pt-22 pb-20 lg:pt-38 lg:pb-32 overflow-hidden">
-        <div className="absolute top-0 right-0 w-[40%] h-full bg-[#83A625]/5 rounded-l-[10rem] -z-10 hidden lg:block" />
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            <FadeIn direction="left">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#83A625]/10 border border-[#83A625]/20">
-                <Zap size={16} className="text-[#83A625] fill-[#83A625]" />
-                <span className="text-[#83A625] text-xs font-black uppercase tracking-[0.2em]">Pakistan's Premium Solar Choice</span>
-              </div>
-            </FadeIn>
-            <FadeIn direction="up" delay={0.2}>
-              <h1 className="text-6xl md:text-8xl font-black text-[#000066] leading-[0.9] tracking-tighter uppercase">
-                Zero <span className="text-[#83A625]">Bills</span> <br /> Absolute <br /> Freedom.
-              </h1>
-            </FadeIn>
-            <FadeIn direction="up" delay={0.3}>
-              <p className="text-gray-600 text-lg md:text-xl max-w-lg font-medium leading-relaxed">
-                Empowering Pakistani homes and businesses with Tier-1 Solar technology. Save up to 100% on your monthly electricity costs.
-              </p>
-            </FadeIn>
-            <FadeIn direction="up" delay={0.4}>
-              <div className="flex flex-wrap gap-4 pt-4">
-                <button className="bg-[#83A625] text-white px-10 py-5 rounded-full font-black uppercase tracking-widest hover:bg-[#000066] transition-all duration-500 shadow-xl shadow-[#83A625]/30">Get Free Survey</button>
-                <button className="border-2 border-[#000066] text-[#000066] px-10 py-5 rounded-full font-black uppercase tracking-widest hover:bg-[#000066] hover:text-white transition-all duration-500">View Projects</button>
-              </div>
-            </FadeIn>
-          </div>
+      {/* --- HERO SECTION: FIXED STRUCTURE --- */}
+      <section className="relative min-h-[90vh] lg:h-screen w-full flex items-center justify-center overflow-hidden">
+        
+        {/* Background Image Layer */}
+        <div className="absolute inset-0 z-0">
+          <Image 
+            src="/sbs-home-hero.jpg" // image_8b1a95.jpg wali file ka path
+            alt="Absolute Freedom Solar" 
+            fill 
+            className="object-cover object-center"
+            priority
+          />
+          {/* Blue Overlay: Is se text saaf nazar ayega */}
+          <div className="absolute inset-0 bg-[#000066]/60 via-[#000066]/40 to-[#000066]/80 z-10" />
+        </div>
 
-          <div className="relative">
-            <FadeIn direction="right" delay={0.4}>
-              <div className="relative z-10 rounded-[3rem] md:rounded-[5rem] overflow-hidden border-[12px] border-white shadow-2xl">
-                <Image src="/sbs-home-hero.jpg" alt="SBS Solar" width={800} height={1000} className="w-full h-[500px] md:h-[650px] object-cover" />
-              </div>
-            </FadeIn>
-            <FadeIn direction="up" delay={0.8} className="absolute -bottom-8 -left-8 z-20">
-              <div className="bg-white p-6 rounded-[2rem] shadow-2xl border border-gray-100 flex items-center gap-4">
-                <div className="w-14 h-14 bg-[#83A625] rounded-2xl flex items-center justify-center text-white"><ShieldCheck size={30} /></div>
-                <div><p className="text-[#000066] font-black text-xl uppercase leading-none">NEPRA</p><p className="text-gray-400 text-xs font-bold uppercase tracking-widest">Licensed Provider</p></div>
-              </div>
-            </FadeIn>
-          </div>
+        {/* Content Layer */}
+        <div className="relative z-20 max-w-7xl mx-auto px-6 text-center mt-24">
+          <FadeIn direction="up">
+            <h1 className="text-5xl md:text-9xl font-black text-white leading-[0.85] tracking-tighter uppercase mb-6">
+              Absolute <br /> <span className="text-[#83A625]">Freedom.</span>
+            </h1>
+          </FadeIn>
+
+          <FadeIn direction="up" delay={0.2}>
+            <p className="text-white/90 text-lg md:text-2xl max-w-3xl mx-auto font-medium leading-relaxed mb-10">
+              Empowering Pakistani homes and businesses with Tier-1 Solar technology. 
+              Save up to 100% on your monthly electricity costs.
+            </p>
+          </FadeIn>
+
+          {/* NEPRA Badge - Exact as your reference image */}
+          <FadeIn direction="up" delay={0.3}>
+             <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-12">
+                <div className="w-2 h-2 rounded-full bg-[#83A625] animate-pulse" />
+                <span className="text-white text-xs font-bold uppercase tracking-[0.2em]">NEPRA Licensed Provider</span>
+             </div>
+          </FadeIn>
+
+          <FadeIn direction="up" delay={0.4}>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <button className="w-full sm:w-auto bg-[#83A625] text-[#000066] px-12 py-5 rounded-full font-black uppercase tracking-widest hover:scale-105 transition-transform shadow-xl">
+                Get Free Survey
+              </button>
+              <button className="w-full sm:w-auto border-2 border-white text-white px-12 py-5 rounded-full font-black uppercase tracking-widest hover:bg-white hover:text-[#000066] transition-all">
+                View Projects
+              </button>
+            </div>
+          </FadeIn>
         </div>
       </section>
 

@@ -21,7 +21,7 @@ export default function Navbar() {
   const solutions = [
     {
       title: "Residential Solar",
-      href: "/residential",
+      href: "/residential-solar",
       icon: <Sun size={16} />,
     },
     { title: "Commercial Solar", href: "/commercial", icon: <Zap size={16} /> },
@@ -107,7 +107,7 @@ export default function Navbar() {
           </div>
 
           <Link
-            href="/projects"
+            href="/our-projects"
             className="text-[#000066] font-extrabold text-[13px] uppercase tracking-tighter hover:text-[#83A625] transition"
           >
             Our Projects

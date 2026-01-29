@@ -7,9 +7,9 @@ export default function SolarHomepage() {
   return (
     <main className="relative min-h-screen bg-white">
       
-      {/* --- HERO SECTION --- */}
+      
       {/* --- HERO SECTION: FIXED STRUCTURE --- */}
-      <section className="relative min-h-[90vh] lg:h-screen w-full flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen lg:h-screen w-full flex items-center justify-center overflow-hidden">
         
         {/* Background Image Layer */}
         <div className="absolute inset-0 z-0">
@@ -80,7 +80,7 @@ export default function SolarHomepage() {
       </section>
 
       {/* --- SERVICES / SOLUTIONS --- */}
-      <section className="py-32 bg-slate-50">
+      <section className="py-22 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-20">
             <FadeIn direction="up">

@@ -24,7 +24,7 @@ export default function Navbar() {
       href: "/residential-solar",
       icon: <Sun size={16} />,
     },
-    { title: "Commercial Solar", href: "/commercial", icon: <Zap size={16} /> },
+    { title: "Commercial Solar", href: "/commercial-solar", icon: <Zap size={16} /> },
     {
       title: "Net Metering",
       href: "/net-metering",
@@ -32,7 +32,7 @@ export default function Navbar() {
     },
     {
       title: "Solar Maintenance",
-      href: "/maintenance",
+      href: "/solar-maintenance",
       icon: <Info size={16} />,
     },
   ];

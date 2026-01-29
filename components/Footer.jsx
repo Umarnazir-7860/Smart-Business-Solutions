@@ -40,7 +40,7 @@ const Footer = () => {
           <div className="space-y-6">
             <h5 className="text-[#83A625] font-black uppercase tracking-widest text-xs">Our Company</h5>
             <ul className="space-y-4">
-              {['About SBS', 'Our Projects', 'Sustainability', 'Expert Team', 'Careers'].map((link) => (
+              {['About SBS', 'Solutions', 'Our Projects', 'Contact Us'].map((link) => (
                 <li key={link}>
                   <Link href="/" className="text-white/60 hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#83A625]"></span> {link}
@@ -54,7 +54,7 @@ const Footer = () => {
           <div className="space-y-6">
             <h5 className="text-[#83A625] font-black uppercase tracking-widest text-xs">Solar Solutions</h5>
             <ul className="space-y-4">
-              {['Residential Solar', 'Commercial Systems', 'Industrial Power', 'Net Metering', 'Maintenance'].map((link) => (
+              {['Residential Solar', 'Commercial Solar',  'Net Metering', 'Solar Maintenance'].map((link) => (
                 <li key={link}>
                   <Link href="/" className="text-white/60 hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#83A625]"></span> {link}

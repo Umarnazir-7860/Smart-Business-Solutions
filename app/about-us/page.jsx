@@ -264,9 +264,7 @@ export default function AboutPage() {
             </h2>
             <button
               className="bg-[#03045E] group-hover:bg-[#8BBD23] cursor-pointer text-white group-hover:text-[#03045E] 
-            /* Mobile: Kam padding aur chota text */
-            px-6 py-4 text-xs
-            /* Tablet/Desktop: Zyada padding aur bada text */
+            px-3 py-4 text-xs
             md:px-12 md:py-5 md:text-sm
             rounded-2xl font-black uppercase tracking-widest transition-all hover:scale-105 md:hover:scale-110 w-full sm:w-auto"
             >

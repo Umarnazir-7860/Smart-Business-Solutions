@@ -2,17 +2,38 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
-import { Send, Sun } from 'lucide-react';
+import { Send } from 'lucide-react';
 
 const Footer = () => {
+  // Syncing with Navbar links
+  const companyLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/about-us' },
+    { name: 'Our Projects', href: '/our-projects' },
+    { name: 'Contact Us', href: '/contact-us' },
+  ];
+
+  const solutionLinks = [
+    { name: 'Residential Solar', href: '/residential-solar' },
+    { name: 'Commercial Solar', href: '/commercial-solar' },
+    { name: 'Net Metering', href: '/net-metering' },
+    { name: 'Solar Maintenance', href: '/solar-maintenance' },
+  ];
+
   return (
-    <footer className="bg-[#000066] text-white pt-24 pb-12 overflow-hidden">
+    <footer className="bg-[#000066] text-white pt-24 pb-12 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* TOP SECTION: LOGO & NEWSLETTER */}
         <div className="grid lg:grid-cols-2 gap-12 pb-16 border-b border-white/10 items-center">
           <div>
-            <Image src="/footer-logo-final.png" alt="SBS Logo" width={180} height={60} className="mb-6" />
+            <Image 
+              src="/footer-logo-final.png" 
+              alt="SBS Logo" 
+              width={180} 
+              height={60} 
+              className="mb-6 object-contain" 
+            />
             <p className="text-white/60 text-lg max-w-md leading-relaxed">
               Leading the transition to clean energy in Pakistan. Premium Tier-1 Solar solutions for a sustainable and bill-free future.
             </p>
@@ -36,28 +57,30 @@ const Footer = () => {
         {/* MIDDLE SECTION: LINKS */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 py-16">
           
-          {/* Company */}
+          {/* Company - Synced with Navbar */}
           <div className="space-y-6">
             <h5 className="text-[#83A625] font-black uppercase tracking-widest text-xs">Our Company</h5>
             <ul className="space-y-4">
-              {['About SBS', 'Solutions', 'Our Projects', 'Contact Us'].map((link) => (
-                <li key={link}>
-                  <Link href="/" className="text-white/60 hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#83A625]"></span> {link}
+              {companyLinks.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="text-white/60 hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2 group">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#83A625] scale-0 group-hover:scale-100 transition-transform"></span> 
+                    {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Solutions */}
+          {/* Solutions - Synced with Navbar Dropdown */}
           <div className="space-y-6">
             <h5 className="text-[#83A625] font-black uppercase tracking-widest text-xs">Solar Solutions</h5>
             <ul className="space-y-4">
-              {['Residential Solar', 'Commercial Solar',  'Net Metering', 'Solar Maintenance'].map((link) => (
-                <li key={link}>
-                  <Link href="/" className="text-white/60 hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#83A625]"></span> {link}
+              {solutionLinks.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="text-white/60 hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2 group">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#83A625] scale-0 group-hover:scale-100 transition-transform"></span> 
+                    {link.name}
                   </Link>
                 </li>
               ))}
@@ -89,14 +112,14 @@ const Footer = () => {
                   <FaEnvelope size={18} />
                 </div>
                 <p className="text-white/60 text-sm">
-                  info@sbssolar.pk <br /> sales@sbssolar.pk
+                  info@sbs-solar.pk <br /> sales@sbs-solar.pk
                 </p>
               </div>
               
               {/* Social Icons */}
               <div className="flex gap-4">
                 {[FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp].map((Icon, i) => (
-                  <Link key={i} href="/" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#83A625] transition-all">
+                  <Link key={i} href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#83A625] transition-all">
                     <Icon size={16} />
                   </Link>
                 ))}
@@ -106,19 +129,19 @@ const Footer = () => {
         </div>
 
         {/* BOTTOM SECTION: COPYRIGHT */}
-        <div className="pt-12 border-t border-white/10 flex flex-col md:row justify-between items-center gap-6">
+        <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-white/40 text-[10px] font-bold uppercase tracking-[0.2em]">
-            © 2024 SBS Smart Business Solutions. All Rights Reserved.
+            © {new Date().getFullYear()} SBS Smart Business Solutions. All Rights Reserved.
           </p>
           <div className="flex gap-8 text-[10px] font-bold text-white/40 uppercase tracking-widest">
-            <Link href="/" className="hover:text-[#83A625]">Privacy Policy</Link>
-            <Link href="/" className="hover:text-[#83A625]">Terms of Service</Link>
-            <Link href="/" className="hover:text-[#83A625]">Sitemap</Link>
+            <Link href="/privacy-policy" className="hover:text-[#83A625]">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-[#83A625]">Terms of Service</Link>
+            <Link href="/sitemap" className="hover:text-[#83A625]">Sitemap</Link>
           </div>
         </div>
       </div>
 
-      {/* Floating Suraj (Decorative) */}
+      {/* Floating Decorative Sun Glow */}
       <div className="absolute bottom-[-100px] right-[-100px] w-80 h-80 bg-[#83A625]/10 rounded-full blur-[100px] pointer-events-none" />
     </footer>
   );
